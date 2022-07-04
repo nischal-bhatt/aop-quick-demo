@@ -17,7 +17,7 @@ public class LoggingAspect {
 
 	@Pointcut(value = "execution(* com.example.aoploggingdemo.*.*.*(..))")
 	public void loggingPointCut() {
-		
+		System.out.println("what");
 	}
 	
 	@Around("loggingPointCut()")
@@ -28,7 +28,7 @@ public class LoggingAspect {
 		
 		Object[] array = pj.getArgs();
 		System.out.println("Inside "+className+ "class "+methodName+" method, with request : "+mapper.writeValueAsString(array));
-		
+		System.out.println("what!");
 		Object response = pj.proceed();
 		
 		System.out.println("Inside "+className+ "class "+methodName+" method, with response : "+mapper.writeValueAsString(response));
